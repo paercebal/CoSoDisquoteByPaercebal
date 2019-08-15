@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name       CoSoDisquoteByPaercebal
 // @namespace  http://paercebal/GreaseMonkeyScripts
-// @version    1.0
+// @version    1.01
 // @match      https://counter.social/*
 // @grant      none
 // ==/UserScript==
@@ -88,7 +88,7 @@ function paercebal_tryToFindTextareaInput()
   {
     paercebal_log("Trying to find textarea...");
     
-    var t = document.getElementsByClassName("autosuggest-textarea__textarea");
+    let t = document.getElementsByClassName("autosuggest-textarea__textarea");
 
     if(t.length == 1)
     {
@@ -104,7 +104,7 @@ function paercebal_tryToAddButtonDisaquote()
   {
     paercebal_log("Trying to add button...");
     
-    var divWrappers = document.getElementsByClassName("compose-form__publish-button-wrapper");
+    let divWrappers = document.getElementsByClassName("compose-form__publish-button-wrapper");
 
     //paercebal_log("   - found [" + divWrappers.length + "] divWrappers...");
     
@@ -113,7 +113,7 @@ function paercebal_tryToAddButtonDisaquote()
       divWrapper = divWrappers[0];
       
       // Remove block-style from Toot button
-      var buttonToots = divWrapper.getElementsByTagName("button");
+      let buttonToots = divWrapper.getElementsByTagName("button");
       
       if(buttonToots.length == 1)
       {
@@ -171,10 +171,11 @@ function paercebal_escapeTextareaInputQuotes()
   
   if(paercebal_textareaInput != null)
   {
-    var text = paercebal_textareaInput.value;
+    let text = paercebal_textareaInput.value;
     paercebal_log("Text is [" + text + "]");
     text = text.replace("\"", "”");
     text = text.replace("\'", "’");
+    text = text.replace("...", "…");
     paercebal_log("Escaped text is [" + text + "]");
     paercebal_textareaInput.value = text;
   }
