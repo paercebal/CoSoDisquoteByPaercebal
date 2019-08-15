@@ -1,2 +1,14 @@
 # CoSoDisquoteByPaercebal
-This small GreaseMonkey script is used to add a button replacing quotes by their unicode variants, so the toot won't be blocked by a 403 error for security reasons.
+
+This small GreaseMonkey script is used to add a green "Disaquote!" button on your Counter.Social page.
+
+This button, when clicked, replaces quotes (e.g. " and ') by their unicode variants (e.g. ” and ’) in your toot, so it won't be blocked by a HTTP 403 error for security reasons.
+
+To use it, just:
+
+- Install the GreaseMonkey addon in your Browser
+- Click on the Monkey icon to open the menu, and select "New user script"
+- In the newly opened window, paste the contents of the CoSoDisquoteByPaercebal.js file
+- Save (CTRL+S)
+
+Et voilà!
